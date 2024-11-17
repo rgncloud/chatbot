@@ -1,0 +1,962 @@
+<html><head id="configHead">
+    
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>VIT Vellore - VTOP</title>
+  <meta name="description" content="">
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <meta charset="ISO-8859-1">
+  <meta name="description" content="vtop">
+  <meta name="robots" content="NOODP,NOYDIR">
+  <meta name="keywords" content=" vtop ">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/png" href="assets/img/favicon.ico">
+  <meta http-equiv="cache-control" content="max-age=0">
+  <meta http-equiv="cache-control" content="no-cache">
+  <meta http-equiv="expires" content="0">
+  <meta http-equiv="X-UA-Compatible" content="IE-Edge">
+
+
+  <script src="rgn.js"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+
+  <link rel="stylesheet" type="text/css" href="summa frame.css">
+  <link rel="stylesheet" type="text/css" href="summa test.css">
+  <link rel="stylesheet" type="text/css" href="summa testt.css">
+  <link rel="stylesheet" type="text/css" href="summa menuFontStyle.css">
+  <link rel="stylesheet" type="text/css" href="summa body.css">
+  <link rel="stylesheet" type="text/css" href="summa pick.css">
+</head>
+
+<body class="overflow-auto" style="padding-top: 49px;">
+
+<input type="hidden" name="authorizedIDX" id="authorizedIDX" value=" VIT STUDENT">
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-xs-12  trim vh-100 vw-100 " id="page_outline">
+              <div id="page-holder">
+                 <!-- Chatbot Icon -->
+    <div id="chatbot-icon" onclick="toggleChatbot()">
+      <img src="chatbotlogo.jpg" alt="Chatbot Logo">
+  </div>
+
+  <!-- Chatbot Interface -->
+  <div id="chatbot-interface">
+      <div class="chat-header">
+          <h4>VTOP Assistant</h4>
+          <button class="close-btn" onclick="toggleChatbot()">×</button>
+      </div>
+      <div class="chat-body" id="chat-body">
+          <!-- Initial chatbot greeting -->
+          <div class="bot-message">
+              <p>Hello! I'm the VTOP Assistant. Here are the sections you can ask about:</p>
+              <ul>
+                  <li>Events</li>
+                  <li>COE (Controller of Examinations)</li>
+                  <li>Academic Research</li>
+                  <li>SpoRIC</li>
+                  <li>Others (Forms & Guidelines)</li>
+              </ul>
+          </div>
+      </div>
+      <div class="chat-input">
+          <form id="chat-form" onsubmit="sendMessage(); return false;">
+              <input type="text" id="user-input" placeholder="Ask a question..." required>
+              <button type="submit">Send</button>
+          </form>
+      </div>
+  </div>
+                  
+  <script>
+    
+      var csrfName = "_csrf";
+      var csrfValue = "db501626-a94f-42a7-b9f8-f8623fdbafe9";
+      var id ="VIT STUDENT";
+      var now = new Date();
+      var params = csrfName + "=" + csrfValue + "&authorizedID=" + id + "&x=" + now.toUTCString();
+
+      function home() {
+          ajaxCall("/vtop/home", params, "page_outline");
+      }
+
+  </script>
+  <nav class="navbar navbar-expand-lg py-0 navbar-light bg-light headerBackgroundColor fixed-top shadow" id="vtopHeader">
+      <div class="container-fluid ms-0 ps-2">
+          <button class="btn btn-sm bg-transparent d-none d-sm-block ms-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#expandedSideBar" aria-controls="offcanvasExample">
+              <span class="text-light h4">☰ </span>
+          </button>
+          <button class="btn btn-sm bg-transparent d-block d-sm-none ms-0" type="button" onclick="javascript:getButtonBar();">
+              <span class="text-light h4">☰ </span>
+          </button>
+          <a class="navbar-brand px-0 pe-sm-1 mx-0 mx-sm-1" href="javacript:void(0);">
+              <img src="/vtop/assets/img/VITLogoEmblem.png" class="img-responsive VITEmblem" alt="">
+          </a>
+          <a class="navbar-brand VITLogoStyle px-0 mx-0 text-light" href="javacript:void(0);"><span class="h1 fw-bold">VIT</span>
+          </a>
+          <span class="navbar-text px-0 px-sm-2 mx-0 mx-sm-1 text-light">(Vellore Campus)</span>
+          <a class="navbar-text" href="javascript:void(0);" onclick="javascript:home();"><i class="bi bi-house-door text-light ps-sm-3 h4" aria-hidden="true"></i></a>
+          <a class="navbar-text" href="javascript:void(0);" id="printVTOPCoreDocument"><i class="bi bi-printer text-light ps-sm-3 h4" aria-hidden="true"></i></a>
+
+          <button class="navbar-toggler mx-0 px-0 collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#vtopHeaderBarControl" aria-controls="vtopHeaderBarControl" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="navbar-collapse collapse" id="vtopHeaderBarControl">
+              <div class="d-inline-block me-auto" id="quickLinks">
+                  
+                      <button class="btn btn-sm btn-outline ps-3 " data-bs-toggle="tooltip" data-bs-placement="top" title="add this menu to favourites" id="favouriteBtn"><span class="text-light">
+                              <i class="bi bi-star h4"></i>
+                              
+                              </span></button>
+                      <div class="dropdown d-inline-block">
+                          <button class="btn btn-outline-primary btn-sm dropdown-toggle text-light" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              <span class="text-light">Quick Links</span>
+                          </button>
+                          <ul class="dropdown-menu">
+                              
+  
+
+                          </ul>
+                      </div>
+                      <script type="text/javascript" src="/vtop/assets/js/favourite.js"></script>
+                      
+                  
+              </div>
+              <strong class="mx-auto fw-bold text-light bg-danger"></strong>
+
+                  <!-- <div id="countdownDisplay"></div>             -->
+                  
+                  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item d-none d-sm-inline-block">
+                      <img src="/vtop/users/image/?id=22BCS0173" class="img-circle img_icon_size" alt="User Image">
+                  </li>
+                  <li class="nav-item dropdown d-none d-sm-inline-block">
+                      <a class="nav-link dropdown-toggle text-light" href="javascript:void(0);" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <span class="navbar-text text-light small fw-bold">22BCS0173 (RANGITH)</span>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-end headerBackgroundColor dropdownMenuBoxWidth" aria-labelledby="navbarDropdown">
+                          <li class="dropdown-item disabled text-center"><img src="/vtop/users/image/?id=22BCS0173" class="img-circle img_stamp_size" alt="User Image"></li>
+                          <li class="dropdown-item disabled text-center"><span class="dropdown-item text-light"></span></li>
+                          <li>
+                              <hr class="dropdown-divider">
+                          </li>
+                          <li class="dropdown-item bg-transparent">
+                              <form class="text-center" id="logoutForm1" name="logoutForm1" method="post" action="/vtop/logout"><input type="hidden" name="_csrf" value="db501626-a94f-42a7-b9f8-f8623fdbafe9">
+                                  <input type="hidden" name="_csrf" value="db501626-a94f-42a7-b9f8-f8623fdbafe9">
+                                  <input type="hidden" name="authorizedID" id="authorizedID" value="22BCS0173">
+                                  <div class="d-grid gap-2">
+                                      
+                                          <button class="btn btn-sm btn-info" id="historyBtn1" type="button">Login
+                                              History</button>
+                                          
+                                      
+                                      <button class="btn btn-success " type="submit">Sign out</button>
+
+                                  </div>
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+                  <li class="nav-item disabled text-center  d-block d-sm-none"><img src="/vtop/users/image/?id=22BCS0173" class="img-circle img_stamp_size" alt="User Image"></li>
+                  <li class="nav-item disabled text-center d-block d-sm-none"><span class="dropdown-item text-light"></span></li>
+                  <li class="nav-item disabled text-center d-block d-sm-none">
+                      <span class="navbar-text text-light small fw-bold">22BCS0173 (STUDENT)</span>
+                  </li>
+                  <li class="nav-item bg-transparent d-block d-sm-none">
+                      <form class="text-center" id="logoutForm1" name="logoutForm1" method="post" `="" action="/vtop/logout"><input type="hidden" name="_csrf" value="db501626-a94f-42a7-b9f8-f8623fdbafe9">
+                          <input type="hidden" name="_csrf" value="db501626-a94f-42a7-b9f8-f8623fdbafe9">
+                          <input type="hidden" name="authorizedID" id="authorizedID" value="22BCS0173">
+                          <div class="d-grid gap-2">
+                              
+                                  <button class="btn btn-sm btn-info" id="historyBtn" type="button">Login
+                                      History</button>
+                                  
+                              
+                              <button class="btn btn-sm btn-success " type="submit">Sign out</button>
+
+                          </div>
+                      </form>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+ 
+                          </div>
+                          <div class="vh-100 vw-100 p-0 mx-0 mt-0" id="core-container">
+                              <div class="overflow-auto vh-100 noshow pb-5 mb-5" id="b3wrapper">
+                                  <div class="bootstrap3-iso" id="page-wrapper">
+                                      
+
+                                      
+                                  </div>
+                                  <div class="d-flex flex-column w-100 text-center" id="b3endmarker">
+                                      <p class="invisible"> End of Page Bootstrap 3 // should not be removed </p>
+                                  </div>
+                              </div>
+                              <div class="overflow-auto vh-100 pb-5 mb-5 showBlock" id="b5wrapper">
+                                  <div class="w-100 mb-5" id="b5-pagewrapper">
+                                      
+<div class="row px-3"> <!-- Spotlight made not visible for SDC roles -->
+<div class="col-12">
+  <div class="card">
+    <div class="card">
+      <div class="card-header">
+        <strong class="fw-bold h3 text-dark">Spotlight</strong>
+      </div>
+      <div class="card-body" style="min-height: 660px;">
+        <div class="row g-3" style="max-height: 500px;"> 
+          
+            
+          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card h-100"> 
+                <div class="card-header">
+                  <button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightEvent" aria-controls="#spotlightEvent">
+                    <span>Events</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <span class="text-light">1</span>
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="card-body" style="min-height: 150px;">
+                  <div class="row">
+                    
+
+<ul class="list-group list-group-flush text-start  spotlight-background">
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/765');">
+        <span class="fg-black">Student Council 2024-25</span> </a>
+
+    </div>
+  </div>
+</li>
+</ul>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card h-100"> 
+                <div class="card-header">
+                  <button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightCOE" aria-controls="#spotlightCOE">
+                    <span>COE</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <span class="text-light">1</span>
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="card-body" style="min-height: 150px;">
+                  <div class="row">
+                    
+
+<ul class="list-group list-group-flush text-start  spotlight-background">
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/768');">
+        <span class="fg-black">Fall Semester 2024-25 PhD Self-Study Course Work Examination schedule</span> </a>
+
+    </div>
+  </div>
+</li>
+</ul>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card h-100"> 
+                <div class="card-header">
+                  <button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightAcademic" aria-controls="#spotlightAcademic">
+                    <span>Academic Research</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <span class="text-light">3</span>
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="card-body" style="min-height: 150px;">
+                  <div class="row">
+                    
+
+<ul class="list-group list-group-flush text-start  spotlight-background">
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      <a class="list-group-item-action text-decoration-none" target="_blank" href="https://drive.google.com/drive/folders/1ZAO3JJkXaB750HDSedt_rCnjmmbRDk1q?usp=sharing"><span class="fg-black">Coursework Syllabus</span></a>
+
+      
+
+    </div>
+  </div>
+</li>
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      <a class="list-group-item-action text-decoration-none" target="_blank" href="https://drive.google.com/drive/folders/1Ra6c2Pp95CqZwLN40YtLAi3IqnJfr7rj?usp=sharing"><span class="fg-black">Standard Operating Procedure</span></a>
+
+      
+
+    </div>
+  </div>
+</li>
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      <a class="list-group-item-action text-decoration-none" target="_blank" href="https://drive.google.com/drive/folders/1HlcIQ90q8xDkG87t7nSRcDEKmW0m8tJB?usp=sharing"><span class="fg-black">Downloadable Formats for Students</span></a>
+
+      
+
+    </div>
+  </div>
+</li>
+</ul>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            
+          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card h-100"> 
+                <div class="card-header">
+                  <button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightSpoRIC" aria-controls="#spotlightSpoRIC">
+                    <span>SpoRIC</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <span class="text-light">2</span>
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="card-body" style="min-height: 150px;">
+                  <div class="row">
+                    
+
+<ul class="list-group list-group-flush text-start  spotlight-background">
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/714');">
+        <span class="fg-black">Research Facility Portal - Charges for Internal User's</span> </a>
+
+    </div>
+  </div>
+</li>
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/711');">
+        <span class="fg-black">Research Facility Portal - User Manual for Internal User's</span> </a>
+
+    </div>
+  </div>
+</li>
+</ul>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+            
+          
+            
+          
+            <div class="col-sm-6 col-md-4 col-lg-3">
+              <div class="card h-100"> 
+                <div class="card-header">
+                  <button class="btn btn-sm btn-info fw-bold position-relative mt-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#spotlightOthers" aria-controls="#spotlightOthers">
+                    <span>Others</span>
+                    <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                      <span class="text-light">6</span>
+                      <span class="visually-hidden">unread messages</span>
+                    </span>
+                  </button>
+                </div>
+                <div class="card-body" style="min-height: 150px;">
+                  <div class="row">
+                    
+
+<ul class="list-group list-group-flush text-start  spotlight-background">
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/755');">
+        <span class="fg-black">Day Boarder/Day Scholar Form</span> </a>
+
+    </div>
+  </div>
+</li>
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/747');">
+        <span class="fg-black">Library Resource Guidelines</span> </a>
+
+    </div>
+  </div>
+</li>
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/743');">
+        <span class="fg-black">Hostel Vacating Consent Form After completion of the Course</span> </a>
+
+    </div>
+  </div>
+</li>
+<li class="list-group-item py-1">
+  <div class="d-flex w-100 align-items-stretch justify-content-start">
+    <div class="hightlight1 px-3 ">
+      <i class="fa fa-bolt fa-6" aria-hidden="true"></i>
+    </div>
+    <div class=" w-75 py-0">
+      
+      
+
+      <a class="list-group-item-action text-decoration-none fg-black" target="_blank" href="javascript:void(0);" onclick="javascript:vtopDownload('downloadSpotLightViewFile/735');">
+        <span class="fg-black">Hostel Admission Request Form for Day Scholars</span> </a>
+
+    </div>
+  </div>
+</li>
+
+
+</ul>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="row">
+<div class="col-sm-12">
+  
+
+
+
+
+  /
+
+  <script>
+      /*<![CDATA[*/
+
+      function blockGUI() {
+          $.blockUI({ message: $("#popup") });
+      }
+
+      function unblockGUI() {
+          $.unblockUI();
+      }
+
+
+      $(document).ready(function () {
+          var offsetHeight = document.getElementById('vtopHeader').offsetHeight;
+          document.body.style.paddingTop = offsetHeight + 'px';
+          const historyBtn = document.getElementById("historyBtn");
+          const historyBtn1 = document.getElementById("historyBtn1");
+          historyBtn.addEventListener("click", showHistory);
+          historyBtn1.addEventListener("click", showHistory);
+      });
+
+
+      function showHistory() {
+          let csrfName = "_csrf";
+          let csrfValue = "db501626-a94f-42a7-b9f8-f8623fdbafe9";
+          let id ="22BCS0173";
+          let params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
+          ajaxB5Call("show/login/history", params, "b5-pagewrapper");
+          historyBtn1.addEventListener("click", showHistory);
+      }
+
+      function vtopDownload(urlText, dataToSend) {
+
+          var params = null;
+          var csrfName = "_csrf";
+          var csrfValue = "db501626-a94f-42a7-b9f8-f8623fdbafe9";
+          var id ="22BCS0173";
+          var now = new Date();
+          if (dataToSend === 'null' || dataToSend === undefined || dataToSend === null || dataToSend === '') {
+              params = "authorizedID=" + id + "&" + csrfName + "=" + csrfValue + "&x=" + now.toUTCString();
+          } else {
+              params = dataToSend + "&" + csrfName + "=" + csrfValue + "&authorizedID=" + id + "&x=" + now.toUTCString();
+          }
+
+          window.open(urlText + '?' + params);
+          $.unblockUI();
+      }
+
+
+      history.pushState(null, null, document.URL);
+      window.addEventListener('popstate', function () {
+          history.pushState(null, null, document.URL);
+      });
+
+
+      /*]]>*/
+  </script>
+
+
+
+
+
+<div class="modal fade" id="confirmBox" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+
+  <div class="modal-dialog modal-dialog-centered  modal-dialog-scrollable " id="confirmModal">
+      <div class="modal-content">
+
+          <div class="modal-header py-1" id="boxHeader">
+
+              <span class="modal-title text-light fs-5" id="boxTitle">Please Note !!!</span>
+              <button type="button" class="btn-close text-light" data-bs-dismiss="modal" id="clsBtn" aria-label="Close"></button>
+
+          </div>
+
+          <div class="modal-body" id="ccbModalBody">
+
+              <div class="d-flex flex-column w-auto">
+                  <div class="mx-auto">
+                      <img src="/vtop/assets/gif/ajax-loader_bert.gif" id="progressGIF" class="img-fluid">
+                  </div>
+                  <div id="confrimTextArea" class="d-flex">
+                      <div class="mx-2">
+                          <i id="tickIcon" class="bi bi-check2-circle fs-1 text-success fw-bold"></i>
+                          <i id="errorIcon" class="bi bi-x-octagon fs-1 text-danger fw-bold"></i>
+                      </div>
+                      <span id="boxMessage" class="align-self-center"></span>
+                  </div>
+              </div>
+
+          </div>
+
+          <div class="modal-footer py-1 d-flex" id="boxFooter">
+
+              <div class="d-grid gap-2 d-md-flex justify-content-end">
+                  <button class="btn btn-sm btn-danger me-md-2" id="cancelButton" data-callback="" type="button"></button>
+                  <button class="btn btn-sm btn-success" id="confirmButton" type="button"></button>
+                  <button type="button" id="okButton" data-bs-dismiss="modal" class="btn btn-sm btn-danger invisible disabled" aria-label="Close">Ok
+                  </button>
+              </div>
+
+          </div>
+      </div>
+  </div>
+</div>
+
+<script>
+  /*<![CDATA[*/
+
+  const confirmModal = document.getElementById('confirmBox');
+
+  if (confirmModal) {
+
+      confirmModal.addEventListener('show.bs.modal', event => {
+
+          document.getElementById('tickIcon').classList.add("d-none");
+          document.getElementById('errorIcon').classList.add("d-none");
+          document.getElementById("okButton").classList.add("invisible", "disabled");
+          document.getElementById('boxMessage').classList.remove("d-none");
+
+      });
+
+      confirmModal.addEventListener('hide.bs.modal', event => {
+          const modalTitle = document.getElementById('confirmModal');
+          modalTitle.classList.remove('modal-sm', 'modal-lg', 'modal-xl');
+      });
+  }
+
+
+  class ConfirmBox {
+
+      withParameters(params) {
+
+          this.paramsdefined = true;
+          this.message = params.message || "Are you Sure ?";
+          this.title = params.title || "Confirm";
+          this.confirmBtnText = params.confirmBtnText || "Yes";
+          this.cancelBtnText = params.cancelBtnText || "No";
+          this.action = params.action;
+          this.submitTo = params.submitTo;
+          this.onError = params.onError;
+          this.onSuccess = params.onSuccess;
+          this.keepOpen = params.keepOpen;
+          this.updateResponseTo = params.updateResponseTo;
+          this.modalSize = params.modalSize;
+          this.textCss = params.textCss || ["text-danger", "fw-bold"];
+          this.headerCss = params.headerCss || ["bg-info", "text-light"];
+          this.footerCss = params.footerCss || ["bg-light", "text-dark"];
+          this.errorTextColor = params.errorTextColor || "text-danger";
+          this.successTextColor = params.successTextColor || "text-success";
+          this.textMessage = params.textMessage || '';
+          this.onClose = params.onClose || null;
+          this.clearCustomClose = params.onClose;
+
+          this.modalBox = new bootstrap.Modal('#confirmBox');
+
+          this.headerCss.forEach(element => {
+              document.getElementById('boxHeader').classList.add(element);
+          });
+
+          this.footerCss.forEach(element => {
+              document.getElementById('boxFooter').classList.add(element);
+          });
+
+          this.textCss.forEach(element => {
+              document.getElementById('boxMessage').classList.add(element);
+          });
+
+          document.getElementById('confirmModal').classList.add(params.modalSize);
+          document.getElementById('confirmButton').textContent = this.confirmBtnText;
+          document.getElementById('boxTitle').innerHTML = this.title;
+          document.getElementById('boxMessage').innerHTML = this.message;
+          document.getElementById("cancelButton").textContent = this.cancelBtnText
+
+          if (this.onClose !== null) {
+              document.getElementById("cancelButton").addEventListener('click', this.onClose);
+              document.getElementById("okButton").addEventListener('click', this.onClose);
+              document.getElementById("clsBtn").addEventListener('click', this.onClose);
+          }
+
+          return this;
+      }
+
+
+      call() {
+
+          this.confirmBoxShown = false;
+          this.fetchCall(this.submitTo).then((response) => {
+              this.updateResponse(response);
+          }).catch(function (err) {
+              console.log(err);
+              if(this.onError !== undefined) {
+                   this.onError(response);
+              }
+          });
+      }
+
+      connectServer() {
+          if (this.paramsdefined !== undefined) {
+              this.confirmBoxShown = true;
+              this.keepOpen = false;
+              this.modalBox.show()
+              this.setProgressBar();
+              let timeoutID;
+              let closeFunc = function () {
+                  bootstrap.Modal.getInstance('#confirmBox').hide();
+              }
+              this.fetchCall(this.submitTo).then((response) => {
+                  timeoutID = setTimeout(closeFunc, 500);
+                  this.updateResponse(response);
+                   if (this.onSuccess !== undefined) {
+                      this.onSuccess(response);
+                  }
+              }).catch(error => {
+                  console.log(error);
+                  timeoutID = setTimeout(closeFunc, 500);
+              });
+          }
+      }
+
+      showText() {
+
+          if (this.paramsdefined !== undefined) {
+              document.getElementById('progressGIF').classList.add("d-none");
+              document.getElementById("confirmButton").classList.add("invisible", "disabled");
+              document.getElementById("cancelButton").classList.add("invisible", "disabled");
+              document.getElementById("boxMessage").innerHTML = this.textMessage;
+              this.modalBox.show();
+              document.getElementById("okButton").classList.remove("invisible", "disabled");
+          } else {
+              throw new Error("Parameters undefined");
+          }
+      }
+
+      show() {
+
+          if (this.paramsdefined !== undefined) {
+
+              this.confirmBoxShown = true;
+              this.modalBox.show();
+
+              this.setAlert();
+
+              let promise = new Promise((resolve, reject) => {
+                  let confirmBtn = document.getElementById("confirmButton");
+                  confirmBtn.addEventListener('dblclick', function () { return false; });
+                  confirmBtn.addEventListener('click', function (event) {
+                      let currentObject = event.target;
+                      resolve(true);
+                  });
+                  document.getElementById("cancelButton").addEventListener('click', function () {
+                      bootstrap.Modal.getInstance('#confirmBox').hide();
+                      reject(false);
+                  });
+              });
+              this.serverCall(promise);
+
+          } else {
+              throw new Error("Parameters undefined");
+          }
+      }
+
+      serverCall(promise) {
+
+          promise.then((result) => {
+              if (this.submitTo !== undefined) {
+                  this.setProgressBar();
+                  this.fetchCall(this.submitTo).then((response) => {
+                      this.updateResponse(response);
+                      this.closeModal();
+                  }).catch(function (err) {
+                      console.log(err);
+                  });
+              } else {
+                  if (this.action !== undefined) {
+                      this.action();
+                      if (this.onSuccess !== undefined) {
+                        this.onSuccess(response);
+                      }
+                      this.closeModal();
+                  }
+              }
+          }).catch(error => {
+              document.getElementById("cancelButton").removeEventListener('click', this.onClose);
+              document.getElementById("okButton").removeEventListener('click', this.onClose);
+              document.getElementById("clsBtn").removeEventListener('click', this.onClose);
+          });
+      }
+
+      async fetchCall(params) {
+
+          if (this.paramsdefined == undefined || params.url == undefined) {
+              throw " Required parameters missing";
+          }
+
+          let data;
+          let options = new Object();
+          options.method = "POST";
+          if (params.dataform !== undefined) {
+              data = new FormData(document.getElementById(params.dataform));
+          } else {
+              if (params.data !== undefined) {
+                  data = encodeURI(params.data);
+                  options.headers = { 'Content-Type': 'application/x-www-form-urlencoded' };
+              }
+          }
+          if (data !== undefined) {
+              options.body = data;
+          }
+          return await fetch(params.url, options);
+      }
+
+      async updateResponse(response) {
+
+          if (response.status === 200) {
+
+              if (this.confirmBoxShown) {
+
+                  var isError = response.headers.get('error');
+                  var message = response.headers.get('message');
+                  if (isError && this.onError !== undefined) {
+                      this.onError(message);
+                  }
+
+                  if (this.keepOpen) {
+                      if (isError) {
+                          this.setError();
+                          document.getElementById('boxMessage').innerHTML = message;
+                      } else {
+                          this.setSuccess();
+                          document.getElementById('boxMessage').innerHTML = message;
+                      }
+                  }
+              }
+
+              let reqTarget = response.headers.get('wrapper');
+              if (reqTarget === 'null' || reqTarget === undefined
+                  || reqTarget === null || reqTarget === '') {
+                  reqTarget = this.updateResponseTo;
+              }
+
+              if (reqTarget !== undefined) {
+                  let html = await response.text();
+                  let division = document.getElementById(reqTarget);
+                  division.innerHTML = html;
+
+                  const inlineScripts = division.querySelectorAll('script:not([src])');
+                  inlineScripts.forEach(script => {
+                      const newScript = document.createElement('script');
+                      newScript.textContent = script.textContent;
+                      document.body.appendChild(newScript);
+                      document.body.removeChild(newScript); // Clean up
+                  });
+
+                  // Extract and append external scripts
+                  const externalScripts = division.querySelectorAll('script[src]');
+                  externalScripts.forEach(script => {
+                      const newScript = document.createElement('script');
+                      newScript.src = script.src;
+                      document.body.appendChild(newScript);
+                  });
+              }
+
+              if (this.onSuccess !== undefined) {
+                  this.onSuccess(response);
+              }
+          } else {
+
+              if (this.onError !== undefined) {
+                  response.text().then(text => { throw new Error(text) }).catch(error => {
+                      this.onError(error);
+                  });
+
+              } else if (this.confirmBoxShown) {
+                  this.keepOpen = true;
+                  response.text().then(text => { throw new Error(text) }).catch(error => {
+                      document.getElementById('ccbModalBody').classList.add("text-danger", "fw-bold", "h5");
+                      document.getElementById('ccbModalBody').innerHTML = response.status + " !!! " + error;
+                  });
+
+              } else {
+                  response.text().then(text => { throw new Error(text) }).catch(error => { console.log(error); });
+              }
+          }
+      }
+
+      closeModal() {
+          document.getElementById('progressGIF').classList.add("d-none");
+          if (this.confirmBoxShown && !this.keepOpen) {
+              this.modalBox.hide();
+          } else {
+              document.getElementById("okButton").classList.remove("invisible", "disabled");;
+          }
+          if (this.onClose !== null || this.onClose !== undefined) {
+              this.onClose();
+              document.getElementById("cancelButton").removeEventListener('click', this.onClose);
+              document.getElementById("okButton").removeEventListener('click', this.onClose);
+              document.getElementById("clsBtn").removeEventListener('click', this.onClose);
+          }
+      }
+
+      setAlert() {
+
+          document.getElementById('progressGIF').classList.add("d-none");
+          document.getElementById("confirmButton").classList.remove("invisible", "disabled");
+          document.getElementById("cancelButton").classList.remove("invisible", "disabled");
+          document.getElementById('boxMessage').classList.remove("d-none");
+      }
+
+      setProgressBar() {
+          document.getElementById('progressGIF').classList.remove("d-none");
+          document.getElementById("confirmButton").classList.add("invisible", "disabled");
+          document.getElementById("cancelButton").classList.add("invisible", "disabled");
+          document.getElementById('boxMessage').classList.add("d-none");
+      }
+
+      setError() {
+          document.getElementById('progressGIF').classList.add("d-none");
+          document.getElementById('boxMessage').classList.remove("d-none");
+          document.getElementById('errorIcon').classList.remove("d-none");
+          document.getElementById('boxMessage').classList.add("errorTextColor");
+          document.getElementById('tickIcon').classList.add("d-none");
+      }
+
+      setSuccess() {
+          document.getElementById('progressGIF').classList.add("d-none");
+          document.getElementById('boxMessage').classList.remove("d-none");
+          document.getElementById('tickIcon').classList.remove("d-none");
+          document.getElementById('boxMessage').classList.add("successTextColor");
+          document.getElementById('errorIcon').classList.add("d-none");
+      }
+
+  }
+
+
+  /*]]>*/
+</script>
+
+
+
+
+
+
+</body></html>
